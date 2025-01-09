@@ -32,7 +32,44 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.flexCenterCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  margin: 0 3px;
+  background-color: #fff;
+  display: inline-block;
+}
+
+.dot-active {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  margin: 0 3px;
+  background-color: #000;
+  display: inline-block;
+}
+
+.iconbutton {
+  border: 1px solid black !important;
+}
+
+.line {
+  flex: 1;
+  height: 2px;
+  background-color: #000;
+  border: none;
+  opacity: 1;
 }

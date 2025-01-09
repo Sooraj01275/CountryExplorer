@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.line {
+    flex: 1;
+    height: 2px;
+    background-color: #CFCFCF;
+    border: none;
+}
+
+.iconbutton {
+    border: 1px solid black !important;
+}
+
+@media only screen and (max-width :600px) {
+    .imageWrapper {
+        display: none;
+    }
+}
