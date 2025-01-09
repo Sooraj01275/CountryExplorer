@@ -20,7 +20,7 @@ export default function HomePage() {
         dispatch(CountryAction.patchState({ page: page + 1 }))
     }
     return (
-        <Box p={'40px 80px'}>
+        <Box p={{xs:'20px 30px',sm:'40px 80px'}}>
             <Box display={"flex"} justifyContent={'space-between'}>
                 <Typography fontSize={'16px'} fontWeight={600}>Countries</Typography>
                 <ContinentNavbar />

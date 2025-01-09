@@ -66,9 +66,9 @@ export const Login = () => {
     return (
         <Box gap={2} className={style.container}>
             <Box display={'grid'} p={2}>
-                <Typography fontSize={'32px'} fontWeight={600} textAlign={'start'}>Sign In</Typography>
-                <Box display={'flex'}>
-                    <p>New User?</p>
+                <Typography fontSize={'32px'} fontWeight={600} textAlign={{xs:'center',sm:'start'}}>Sign In</Typography>
+                <Box className='flexCenterCenter' pb={1}>
+                    <Typography>New User?</Typography>
                     <Button
                         disableElevation
                         disableFocusRipple
@@ -77,7 +77,8 @@ export const Login = () => {
                         sx={{
                             ':hover': {
                                 backgroundColor: 'transparent'
-                            }
+                            },
+                            p:0
                         }}>
                         <Typography sx={{ textTransform: 'none' }}>Create an account</Typography>
                     </Button>

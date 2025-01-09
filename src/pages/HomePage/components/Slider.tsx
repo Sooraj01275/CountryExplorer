@@ -36,7 +36,7 @@ export const Slider = () => {
                     display="flex" 
                     justifyContent="center" 
                     alignItems="center"
-                    gridRow={2}
+                    gridRow={{ xs: '2', sm: 'unset' }}
                 >
                     <img src={posts[activePostIndex]?.imgurl} width="100px" />
                 </Box>
@@ -47,7 +47,7 @@ export const Slider = () => {
                     display="flex" 
                     justifyContent="center" 
                     alignItems="center"
-                    gridRow={1}
+                    gridRow={{ xs: '1', sm: 'unset' }}
                 >
                     <img src={posts[getNextIndex()]?.imgurl} width="100px" />
                 </Box>
