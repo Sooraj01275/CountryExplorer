@@ -5,10 +5,12 @@ import { CountryCard } from "./components/CountryCard";
 import { useAppDispatch, useAppSelector } from "../../redux/Hooks";
 import { CountryAction } from "../../redux/reducers/CountrySlice";
 import { Google } from "../../components/icons/Google";
-import { CopyrightOutlined, LinkedIn, Twitter } from "@mui/icons-material";
+import { CopyrightOutlined, LinkedIn, Logout, Twitter } from "@mui/icons-material";
 import { FaceBook } from "../../components/icons/Facebook";
 import ContinentNavbar from "../../components/navBar/NavBar";
 import { CountryCardLoader } from "./components/CountryLoader";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
 
@@ -16,14 +18,35 @@ export default function HomePage() {
     const { loading } = useAppSelector(state => state.country)
     const dispatch = useAppDispatch()
 
+    const navidate = useNavigate()
+
+    useEffect(() => {
+        const isLogin = sessionStorage.getItem('isLogin')
+
+        if (!isLogin) {
+            navidate('/')
+        }
+    }, [])
+
     const loadMoreHandler = () => {
         dispatch(CountryAction.patchState({ page: page + 1 }))
     }
+
+    const logoutHandler = () => {
+        sessionStorage.clear()
+        navidate('/')
+    }
+
     return (
-        <Box p={{xs:'20px 30px',sm:'40px 80px'}}>
+        <Box p={{ xs: '20px 30px', sm: '40px 80px' }}>
             <Box display={"flex"} justifyContent={'space-between'}>
                 <Typography fontSize={'16px'} fontWeight={600}>Countries</Typography>
-                <ContinentNavbar />
+                <Box display={'flex'}>
+                    <ContinentNavbar />
+                    <IconButton onClick={logoutHandler}>
+                        <Logout />
+                    </IconButton>
+                </Box>
             </Box>
             <Box display={{ xs: 'unset', sm: 'flex' }}>
                 <hr style={{ margin: '5px' }} className="line" />
