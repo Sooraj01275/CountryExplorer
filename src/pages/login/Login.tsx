@@ -78,7 +78,8 @@ export const Login = () => {
                             ':hover': {
                                 backgroundColor: 'transparent'
                             },
-                            p:0
+                            p:0,
+                            pl:1
                         }}>
                         <Typography sx={{ textTransform: 'none' }}>Create an account</Typography>
                     </Button>
